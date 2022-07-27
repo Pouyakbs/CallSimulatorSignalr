@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row-fluid">
+    <!-- Side Bar -->
+    <div class="span3">
+        <!-- In Call Actions -->
+        <div class="card card-body bg-light actions">
+            <div id="callstatus" class="status">Idle</div>
+            <button class="btn btn-danger hangup">Hang Up</button>
+        </div>
+        <!-- User List -->
+        <div class="card card-body bg-light user-list">
+            <ul id="usersdata" class="list-group">
+                <li class="list-group-item">Online Users <small id="usersLength"></small></li>
+                <!-- ko foreach: Users -->
+                <li class="list-group-item user" data-cid="" data-username="">
+                    <a href="#">
+                        <!-- only using an a here for bootstrap styling -->
+                        <div class="username"></div>
+                        <div class="helper" data-bind="css: $parent.getUserStatus($data)"></div>
+                    </a>
+                </li>
+                <!-- /ko -->
+            </ul>
+        </div>
+        <div class="card card-body bg-light conn-type">
+            <button type="button" class="btn btn-dark">Connection Type <span class="badge badge-secondary">Audio</span></button>
+        </div>
+    </div>
+    <!-- Videos -->
+    <div class="span9">
+        <div class="row-fluid">
+            <div class="span6">
+                <h4>Partner</h4>
+                <audio class="audio partner" autoplay="" controls=""></audio>
+            </div>
+        </div>
+    </div>
+</div>
