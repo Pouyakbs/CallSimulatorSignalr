@@ -16,7 +16,7 @@ namespace CallSimulatorSignalr.Hub
         public ConnectionHub(List<User> users, List<UserCall> userCalls, List<CallOffer> callOffers)
         {
             _Users = users;
-            _UserCalls = userCalls;
+            _UserCalls = userCalls; 
             _CallOffers = callOffers;
         }
 
